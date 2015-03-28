@@ -4,7 +4,7 @@ angular.module("hrms", ['ngRoute'])
  .config(config)
  .run(run);
 
-config.injector = ['$routeProvider'];
+config.$injector = ['$routeProvider'];
 
 function config($routeProvider){
 $routeProvider
@@ -25,7 +25,7 @@ $routeProvider
   .otherwise({redirectTo:"login/login.html"});
 }
 
-$run.inject = ['$location'];
+run.inject = ['$location'];
 function run($location){
 	
 	$location.path('/login');
